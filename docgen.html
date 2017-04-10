@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Loading script asynchronously -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="javascripts/docGen.js">
+  </script>
+  <link rel="stylesheet" type="text/css" href="solutions.css">
+</head>
+
+<body>
+  <div id="container1">
+  </div>
+  <div class="container" id="main">
+    <div class="box group">
+      <div class="pane-head">
+        <img src="tealium_logo.png" />
+        <h3>Documentation Generator</h3>
+        <div class="tealium-contact clearfix">
+          Quickly generate integration documentation.
+        </div>
+      </div>
+    </div>
+    <ul class="nav nav-tabs style=" border-bottom:0px "">
+      <li role="presentation" class="active"><a href="#">Client</a>
+      </li>
+      <li role="presentation"><a href="#">Server</a>
+      </li>
+      <li role="presentation"><a href="#">Mobile</a>
+      </li>
+    </ul>
+    <div id="main-form">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <container class "control-label">
+            <form id="" class="">
+            <div class="row">
+                <h3>Integration Name</h3>
+                <div class="form-group" id="clientNameList">
+                  <label for="clientName">Enter Integration Name:</label>
+                    <input type="text" class="form-control" id="clientName" placeholder="">
+                </div>
+              </div>
+              <div class="row">
+                <h3>
+                Introduction
+                <h3>
+                <div class="form-group">
+                  <label for="clientIntro">Short description of integration:</label>
+                  <textarea class="form-control" rows="3" id="clientIntro"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <h3>Prerequisites</h3>
+                <div class="form-group" id="clientPrereqList">
+                  <label for="clientPrereq1">Add Prerequisites:</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="clientPrereq1" placeholder="Prereq">
+                    <span class="input-group-btn">
+                    <button class="btn client-add-more " type="button"><span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <h3>Supported Versions</h3>
+                <div class="form-group" id="clientVersionList">
+                  <label for="clientVersion1">Add Versions:</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="clientVersion1" placeholder="Version">
+                    <span class="input-group-btn">
+                    <button  class="btn client-add-more " type="button"><span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <h3>Tag Configurations</h3>
+                <div class="form-inline" id="clientConfigList">
+                  <div class="form-group ">
+                    <label for="clientConfig1">Config Name</label>
+                    <input type="text" class="form-control" id="clientConfig1" placeholder="Config">
+                  </div>
+                  <div class="form-group">
+                    <label for="clientConfigDescription1">Description</label>
+                    <input type="text" class="form-control" id="clientConfigDescription1" placeholder="Description">
+                    <button class="btn client-add-more client-add-multi " type="button"><span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <h3>Load Rules</h3>
+                <div class="form-group" id="clientLoadList">
+                  <label for="clientLoad1">Add a Load Rule:</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="clientLoad1" placeholder="Recommended Load Rule">
+                    <span class="input-group-btn">
+                    <button class="btn client-add-more invis-button" type="button"><span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+
+              <div id="clientDataForm" class="row">
+                <h3>Data Mappings</h3>
+                <div id="clientFullDataForm1">
+                  <div>
+                    <label for="clientDataCategory1">Category:</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="clientDataCategory1" placeholder="Data Category">
+                      <span class="input-group-btn">
+                    <button class="btn client-add-data-category " type="button"><span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                      <button class="btn btn-primary client-add-data-field" id="client-add-data-field-1" type="button"><span class="glyphicon glyphicon-option-vertical"></span>
+
+                        </span>
+                    </div>
+                  </div>
+
+                  <div class="form-inline pull-right col-lg-12" id="clientDataList1">
+                    <div class="form-group ">
+                      <label for="clientData1">Destination</label>
+                      <input type="text" class="form-control" id="clientData1-1" placeholder="Destination Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="clientDataDescription1">Description</label>
+                      <input type="text" class="form-control" id="clientDataDescription1-1" placeholder="Description">
+                      <button class="btn invis-button" type="button"><span class="glyphicon glyphicon-plus"></span>
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <br>
+
+              <div class="row">
+                <h3>Vendor Documentation</h3>
+                <div class="form-inline" id="clientVendorDocList">
+                  <div class="form-group ">
+                    <label for="clientVendordoc1">Doc Title</label>
+                    <input type="text" class="form-control" id="clientVendordoc1" placeholder="Title">
+                  </div>
+                  <div class="form-group">
+                    <label for="clientVendorDocDescription1">Link</label>
+                    <input type="text" class="form-control" id="clientVendordocDescription1" placeholder="Link">
+                    <button class="btn client-add-more client-add-multi " type="button"><span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+<br>
+              <div class="row">
+                <button type="button" id="generate" class="btn btn-default client-generate" style="float: right;">Generate</button>
+
+              </div>
+            </form>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</body>
+
+</html>
