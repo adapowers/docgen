@@ -160,7 +160,7 @@ var dataInject = function(section, tokenized, data) {
         //handle only standard data
         if (key.indexOf("E-Commerce") !== 0 && key.indexOf("Events") !== 0) {
           //Data category
-          tempStr += "###" + key + "###\r\n\r\n";
+          tempStr += "### " + key + "\r\n\r\n";
           //Set up table
           tempStr += "**Destination Name**  |  **Description**\r\n------------- | -------------\r\n";
           //Set data in table
@@ -213,15 +213,15 @@ var clientTemplate = {
   //End each line with appropriate line breaks
   name: "",
   intro : "[docGen:intro]\r\n <div id='toc'>Table of Contents Placeholder</div> \r\n\r\n",
-  prereq : "##Pre-requisites\r\n\r\n[docGen:prereq]\r\n",
-  version : "##Supported Versions\r\n\r\n[docGen:version]\r\n",
-  config : "##Tag Configuration\r\nFirst, go to Tealium\'s Tag Marketplace and add the [docGen:name] Tag to your profile ([how to add a Tag?](https:\/\/community.tealiumiq.com\/t5\/Tealium-iQ-Tag-Management\/Tags\/ta-p\/5016)).\r\n\r\nAfter adding the Tag, configure the below settings:\r\n\r\n[docGen:config]\r\n",
-  load : "##Load Rules\r\n[Load Rules](https:\/\/community.tealiumiq.com\/t5\/1-Getting-Started-Documentation\/Load-Rules-Creation\/ta-p\/9422) determine when and where to load an instance of this Tag on your site.\r\n\r\nRecommended Load Rule: [docGen:load]\r\n",
-  data : "##Data Mappings##\r\n\r\nMapping is the process of sending data from a [Data Layer Variable](https:\/\/community.tealiumiq.com\/t5\/Tealium-iQ-Tag-Management\/Variable-Types-formerly-Data-Sources\/ta-p\/10645#mapping_data_sources) to the corresponding destination variable of the vendor Tag. For instructions on how to map a Variable to a Tag destination, see [Data Mappings](https:\/\/community.tealiumiq.com\/t5\/Tealium-iQ-Tag-Management\/Data-Mappings\/ta-p\/10645#mapping_data_sources).\r\n\r\nThe destination variables for the [docGen:name] Tag are built into its Data Mapping tab. Available categories are:\r\n\r\n[docGen:data]\r\n",
-  data_ecom :"###E-Commerce\r\nSince the [docGen:name] Tag is e-commerce enabled, it will automatically use the default E-Commerce Extension mappings. Manually mapping in this category is generally not needed unless:\r\n\r\n* you want to override any Extension mappings\r\n* your desired ecommerce variable is not offered in the Extension\r\n\r\n[docGen:data_ecom]\r\n",
-  data_events : "###Events\r\nMap to these destinations for triggering specific events on a page. To trigger an event,\r\n\r\n1. Select an event from the dropdown list. You may choose from the predefined list or create a \'Custom\' event. For \'Custom\' event, enter a name with which to identify it.\r\n2. In the \'Trigger\' field, enter the value of the Variable being mapped.\r\n3. To map more events, click the + button and repeat steps #1 and #2.\r\n4. Click \'Apply\'.\r\n\r\nThe event triggers when the supplied value is found in the Data Layer.\r\n\r\n[docGen:data_event]\r\n",
-  release: "<!---\r\n##Release Notes\r\n\r\n### {VERSION NUM XX\/XX\/XXXX}\r\n\r\n* note 1\r\n* note 2\r\n\r\n-->\r\n\r\n",
-  vendordoc : "##Vendor Documentation\r\n\r\n[docGen:vendor]\r\n"
+  prereq : "## Pre-requisites\r\n\r\n[docGen:prereq]\r\n",
+  version : "## Supported Versions\r\n\r\n[docGen:version]\r\n",
+  config : "## Tag Configuration\r\nFirst, go to Tealium\'s Tag Marketplace and add the [docGen:name] Tag to your profile ([how to add a Tag?](https:\/\/community.tealiumiq.com\/t5\/Tealium-iQ-Tag-Management\/Tags\/ta-p\/5016)).\r\n\r\nAfter adding the Tag, configure the below settings:\r\n\r\n[docGen:config]\r\n",
+  load : "## Load Rules\r\n[Load Rules](https:\/\/community.tealiumiq.com\/t5\/1-Getting-Started-Documentation\/Load-Rules-Creation\/ta-p\/9422) determine when and where to load an instance of this Tag on your site.\r\n\r\nRecommended Load Rule: [docGen:load]\r\n",
+  data : "## Data Mappings ##\r\n\r\nMapping is the process of sending data from a [Data Layer Variable](https:\/\/community.tealiumiq.com\/t5\/Tealium-iQ-Tag-Management\/Variable-Types-formerly-Data-Sources\/ta-p\/10645#mapping_data_sources) to the corresponding destination variable of the vendor Tag. For instructions on how to map a Variable to a Tag destination, see [Data Mappings](https:\/\/community.tealiumiq.com\/t5\/Tealium-iQ-Tag-Management\/Data-Mappings\/ta-p\/10645#mapping_data_sources).\r\n\r\nThe destination variables for the [docGen:name] Tag are built into its Data Mapping tab. Available categories are:\r\n\r\n[docGen:data]\r\n",
+  data_ecom :"### E-Commerce\r\nSince the [docGen:name] Tag is e-commerce enabled, it will automatically use the default E-Commerce Extension mappings. Manually mapping in this category is generally not needed unless:\r\n\r\n* you want to override any Extension mappings\r\n* your desired ecommerce variable is not offered in the Extension\r\n\r\n[docGen:data_ecom]\r\n",
+  data_events : "### Events\r\nMap to these destinations for triggering specific events on a page. To trigger an event,\r\n\r\n1. Select an event from the dropdown list. You may choose from the predefined list or create a \'Custom\' event. For \'Custom\' event, enter a name with which to identify it.\r\n2. In the \'Trigger\' field, enter the value of the Variable being mapped.\r\n3. To map more events, click the + button and repeat steps #1 and #2.\r\n4. Click \'Apply\'.\r\n\r\nThe event triggers when the supplied value is found in the Data Layer.\r\n\r\n[docGen:data_event]\r\n",
+  release: "<!---\r\n## Release Notes\r\n\r\n### {VERSION NUM XX\/XX\/XXXX}\r\n\r\n* note 1\r\n* note 2\r\n\r\n-->\r\n\r\n",
+  vendordoc : "## Vendor Documentation\r\n\r\n[docGen:vendor]\r\n"
 };
 
 String.prototype.capitalizeFirstLetter = function() {
