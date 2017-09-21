@@ -141,8 +141,7 @@ var dataInject = function(section, tokenized, data) {
 
     case "config":
       for(var i=0; i<data.length; i++) {
-        //1. ConfigName: Description
-        tempStr += (i+1 + ". " + data[i][0] + ": " + data[i][1] + "\r\n");
+        tempStr += ("* " + data[i][0] + ": " + data[i][1] + "\r\n");
       }
       return tokenized.replace('[docGen:config]', tempStr);
       break;
@@ -153,10 +152,10 @@ var dataInject = function(section, tokenized, data) {
       }
       return tokenized.replace('[docGen:load]', tempStr);
       break;
-    
+
     case "data":
       for (var key in data) {
-        
+
         //handle only standard data
         if (key.indexOf("E-Commerce") !== 0 && key.indexOf("Events") !== 0) {
           //Data category
@@ -189,20 +188,20 @@ var dataInject = function(section, tokenized, data) {
 
       return tokenized.replace('[docGen:data]', tempStr);
     break;
-    
+
     case "vendordoc":
     if (data[0][0]){
       for (var i=0; i<data.length; i++) {
-        
-        tempStr += ("* [" + data[i][0] + "](" + data[i][1] + ")\r\n"); 
+
+        tempStr += ("* [" + data[i][0] + "](" + data[i][1] + ")\r\n");
       }
       return tokenized.replace('[docGen:vendor]', tempStr);
     } else {
       return  "";
     }
-      
+
     break;
-    
+
     default:
       break;
   }
@@ -215,11 +214,11 @@ var clientTemplate = {
   intro : "[docGen:intro]\r\n <div id='toc'>Table of Contents Placeholder</div> \r\n\r\n",
   prereq : "## Pre-requisites\r\n\r\n[docGen:prereq]\r\n",
   version : "## Supported Versions\r\n\r\n[docGen:version]\r\n",
-  config : "## Tag Configuration\r\nFirst, go to Tealium\'s Tag Marketplace and add the [docGen:name] Tag to your profile ([how to add a Tag?](https:\/\/community.tealiumiq.com\/t5\/Tealium-iQ-Tag-Management\/Tags\/ta-p\/5016)).\r\n\r\nAfter adding the Tag, configure the below settings:\r\n\r\n[docGen:config]\r\n",
-  load : "## Load Rules\r\n[Load Rules](https:\/\/community.tealiumiq.com\/t5\/1-Getting-Started-Documentation\/Load-Rules-Creation\/ta-p\/9422) determine when and where to load an instance of this Tag on your site.\r\n\r\nRecommended Load Rule: [docGen:load]\r\n",
-  data : "## Data Mappings ##\r\n\r\nMapping is the process of sending data from a [Data Layer Variable](https:\/\/community.tealiumiq.com\/t5\/Tealium-iQ-Tag-Management\/Variable-Types-formerly-Data-Sources\/ta-p\/10645#mapping_data_sources) to the corresponding destination variable of the vendor Tag. For instructions on how to map a Variable to a Tag destination, see [Data Mappings](https:\/\/community.tealiumiq.com\/t5\/Tealium-iQ-Tag-Management\/Data-Mappings\/ta-p\/10645#mapping_data_sources).\r\n\r\nThe destination variables for the [docGen:name] Tag are built into its Data Mapping tab. Available categories are:\r\n\r\n[docGen:data]\r\n",
-  data_ecom :"### E-Commerce\r\nSince the [docGen:name] Tag is e-commerce enabled, it will automatically use the default E-Commerce Extension mappings. Manually mapping in this category is generally not needed unless:\r\n\r\n* you want to override any Extension mappings\r\n* your desired ecommerce variable is not offered in the Extension\r\n\r\n[docGen:data_ecom]\r\n",
-  data_events : "### Events\r\nMap to these destinations for triggering specific events on a page. To trigger an event,\r\n\r\n1. Select an event from the dropdown list. You may choose from the predefined list or create a \'Custom\' event. For \'Custom\' event, enter a name with which to identify it.\r\n2. In the \'Trigger\' field, enter the value of the Variable being mapped.\r\n3. To map more events, click the + button and repeat steps #1 and #2.\r\n4. Click \'Apply\'.\r\n\r\nThe event triggers when the supplied value is found in the Data Layer.\r\n\r\n[docGen:data_event]\r\n",
+  config : "## Tag Configuration\r\nFirst, go to Tealium\'s Tag Marketplace and add the [docGen:name] tag to your profile ([how to add a tag?](https:\/\/community.tealiumiq.com\/t5\/Tealium-iQ-Tag-Management\/Tags\/ta-p\/5016)).\r\n\r\nAfter adding the tag, configure the below settings:\r\n\r\n[docGen:config]\r\n",
+  load : "## Load Rules\r\n[Load Rules](https:\/\/community.tealiumiq.com\/t5\/1-Getting-Started-Documentation\/Load-Rules-Creation\/ta-p\/9422) determine when and where to load an instance of this tag on your site.\r\n\r\nRecommended Load Rule: [docGen:load]\r\n",
+  data : "## Data Mappings ##\r\n\r\nMapping is the process of sending data from a [data layer variable](https:\/\/community.tealiumiq.com\/t5\/Tealium-iQ-Tag-Management\/Variable-Types-formerly-Data-Sources\/ta-p\/10olu645#mapping_data_sources) to the corresponding destination variable of the vendor tag. For instructions on how to map a variable to a tag destination, see [data mappings](https:\/\/community.tealiumiq.com\/t5\/Tealium-iQ-Tag-Management\/Data-Mappings\/ta-p\/10645#mapping_data_sources).\r\n\r\nThe destination variables for the [docGen:name] tag are built into its **Data Mapping** tab. Available categories are:\r\n\r\n[docGen:data]\r\n",
+  data_ecom :"### E-Commerce\r\nSince the [docGen:name] tag is e-commerce enabled, it will automatically use the default E-Commerce Extension mappings. Manually mapping in this category is generally not needed unless:\r\n\r\n* You want to override any extension mappings\r\n* Your desired e-commerce variable is not offered in the extension\r\n\r\n[docGen:data_ecom]\r\n",
+  data_events : "### Events\r\nMap to these destinations for triggering specific events on a page. To trigger an event:\r\n\r\n1. Select an event from the dropdown list. You may choose from the predefined list or create a \'Custom\' event. For a \'Custom\' event, enter a name with which to identify it.\r\n2. In the **Trigger** field, enter the value of the variable being mapped.\r\n3. To map more events, click the **+** button and repeat steps #1 and #2.\r\n4. Click \'Apply\'.\r\n\r\nThe event triggers when the supplied value is found in the data layer.\r\n\r\n[docGen:data_event]\r\n",
   release: "<!---\r\n## Release Notes\r\n\r\n### {VERSION NUM XX\/XX\/XXXX}\r\n\r\n* note 1\r\n* note 2\r\n\r\n-->\r\n\r\n",
   vendordoc : "## Vendor Documentation\r\n\r\n[docGen:vendor]\r\n"
 };
@@ -311,7 +310,7 @@ $(document).ready(function() {
           counter: 1,
           elementIDs: [dataFieldID]
         };
-    
+
       var newIn = '<div id="clientFullDataForm' + next + '"> <div> <label for="clientDataCategory' + next + '">Category:</label> <div class="input-group"> <input type="text" class="form-control" id="clientDataCategory' + next + '" placeholder="Data Category"> <span class="input-group-btn"> <button class="btn btn-danger " id="client-remove-data-category' + next + '" type="button"><span class="glyphicon glyphicon-minus"></span> </button> <button class="btn btn-primary client-add-data-field" id="client-add-data-field-'+ next +'" type="button"><span class="glyphicon glyphicon-option-vertical"></span></span> </div> </div> <div class="form-inline pull-right col-lg-12"  id="clientDataList' + next + '"> <div class="form-group "> <label for="clientData' + next + '-1">Destination</label> <input type="text" class="form-control" id="clientData' + next + '-1" placeholder="Destination Name"> </div> <div class="form-group"> <label for="clientDataDescription' + next + '-1">Description</label> <input type="text" class="form-control" id="clientDataDescription' + next + '-1" placeholder="Description"> <button class="btn invis-button" type="button"><span class="glyphicon glyphicon-plus"></span> </button> </div> </div> </div>';
       var newInput = $(newIn);
       $(addto).append(newInput);
@@ -367,7 +366,7 @@ $(document).ready(function() {
       field1.remove();
       field2.remove();
     });
-    
+
   }));
 });
 
