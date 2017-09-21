@@ -141,8 +141,7 @@ var dataInject = function(section, tokenized, data) {
 
     case "config":
       for(var i=0; i<data.length; i++) {
-        //1. ConfigName: Description
-        tempStr += (i+1 + ". " + data[i][0] + ": " + data[i][1] + "\r\n");
+        tempStr += ("* " + data[i][0] + ": " + data[i][1] + "\r\n");
       }
       return tokenized.replace('[docGen:config]', tempStr);
       break;
